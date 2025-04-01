@@ -10,7 +10,8 @@
     <div class="contact-form__heading">
         <h2>お問い合わせ</h2>
     </div>
-    <form class="form" action="/">
+    <form class="form" action="/confirm" method="post">
+        @csrf
         <div class="form-group">
             <div class="form-group__title">
                 <span class="form-label__item">お名前
@@ -19,7 +20,7 @@
             </div>
             <div class="form-group__content">
                 <div class="form-input__text">
-                    <input type="text" name="name" value="" placeholder="テスト太郎" />
+                    <input type="text" name="name"  placeholder="テスト太郎" />
                 </div>
                 <div class="form-error">
                 </div>

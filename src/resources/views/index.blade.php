@@ -10,7 +10,7 @@
     <div class="contact-form__heading">
         <h2>お問い合わせ</h2>
     </div>
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="/contacts/confirm" method="post">
         @csrf
         <div class="form-group">
             <div class="form-group__title">
@@ -20,9 +20,12 @@
             </div>
             <div class="form-group__content">
                 <div class="form-input__text">
-                    <input type="text" name="name"  placeholder="テスト太郎" />
+                    <input type="text" name="name"  placeholder="テスト太郎" value="{{ old('name') }}"/>
                 </div>
                 <div class="form-error">
+                    @error('name')
+                    {{ $message }}
+                    @enderror
                 </div>
             </div>
         </div>
@@ -36,7 +39,7 @@
 
             <div class="form-group__content">
                 <div class="form-input__text">
-                    <input  type="email" name="email" value="" placeholder="test@example.com" />
+                    <input  type="email" name="email" value="{{ old('email') }}"placeholder="test@example.com" />
                 </div>
                 <div class="form-error">
                 </div>
@@ -51,7 +54,7 @@
             </div>
             <div class="form-group__content">
                 <div class="form-input__text">
-                    <input  type="tel" name="tel" value="" placeholder="0901234567" />
+                    <input  type="tel" name="tel" value="{{ old('tel') }}" placeholder="0901234567" />
                 </div>
                 <div class="form-error">
                 </div>
